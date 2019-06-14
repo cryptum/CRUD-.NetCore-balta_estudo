@@ -37,11 +37,11 @@ namespace Balta
                 app.UseDeveloperExceptionPage();
             }
 
-            /* app.Run(async (context) =>
+            app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
-            */
+            
 
             app.UseMvc();
             app.UseResponseCompression();
