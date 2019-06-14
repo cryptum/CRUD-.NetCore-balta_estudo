@@ -26,7 +26,7 @@ namespace Balta
 
 
             services.AddMvc();
-            services.AddResponseCompression();
+            //services.AddResponseCompression();
             services.AddScoped<StoreDataContext, StoreDataContext>();
             services.AddTransient<ProductRepository, ProductRepository>();
 
@@ -50,7 +50,7 @@ namespace Balta
             }); */
             
             app.UseMvc();
-            app.UseResponseCompression();
+            //app.UseResponseCompression();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

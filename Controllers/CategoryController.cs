@@ -18,7 +18,7 @@ namespace Balta.Controllers
 
         [Route("v1/categories")]
         [HttpGet]
-        [ResponseCache(Location = ResponseCacheLocation.Client, Duration = 60)]
+        [ResponseCache(Duration = 60)]
         public IEnumerable<Category> Get()
         {
             return _context.Categories.AsTracking().ToList();
@@ -26,6 +26,7 @@ namespace Balta.Controllers
 
         [Route("v1/categories/{id}")]
         [HttpGet]
+        [ResponseCache(Location = ResponseCacheLocation.Client, Duration = 60)]
         public Category Get(int id)
         {
             return _context.Categories.AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
