@@ -23,7 +23,9 @@ namespace Balta
                 .AddJsonFile("appsettings.json");
             var Configuration = configBuilder.Build();
             
-            services.AddApplicationInsightsTelemetry(Configuration);
+            services.AddApplicationInsightsTelemetry(Configuration); 
+
+
             services.AddMvc();
             services.AddResponseCompression();
             services.AddScoped<StoreDataContext, StoreDataContext>();
@@ -48,7 +50,6 @@ namespace Balta
                 await context.Response.WriteAsync("Hello World!");
             }); */
             
-
             app.UseMvc();
             app.UseResponseCompression();
             app.UseSwagger();
