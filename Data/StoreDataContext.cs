@@ -20,7 +20,7 @@ namespace Balta.Data
             optionsBuilder.UseSqlServer(@"Server=tcp:basicprodcat.database.windows.net,1433;
                                             Initial Catalog=prodcat;
                                             Persist Security Info=False;
-                                            User ID=basicprodcat;
+                                            User ID=danilo.;
                                             Password=H@loprimordi1;
                                             MultipleActiveResultSets=False;
                                             Encrypt=True;

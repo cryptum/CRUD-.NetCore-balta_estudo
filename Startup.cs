@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Balta.Data;
 using Balta.Repositories;
+using Microsoft.Extensions.Configuration;
 
 namespace Balta
 {
@@ -18,6 +19,11 @@ namespace Balta
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var configBuilder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json");
+            var Configuration = configBuilder.Build();
+            
+            services.AddApplicationInsightsTelemetry(Configuration);
             services.AddMvc();
             services.AddResponseCompression();
             services.AddScoped<StoreDataContext, StoreDataContext>();
