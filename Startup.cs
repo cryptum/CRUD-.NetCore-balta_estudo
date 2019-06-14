@@ -19,8 +19,7 @@ namespace Balta
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var configBuilder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json");
+            var configBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
             var Configuration = configBuilder.Build();
             
             services.AddApplicationInsightsTelemetry(Configuration); 
